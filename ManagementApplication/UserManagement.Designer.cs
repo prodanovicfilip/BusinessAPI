@@ -44,6 +44,7 @@
             DGV_Users.Location = new Point(0, 94);
             DGV_Users.Name = "DGV_Users";
             DGV_Users.ReadOnly = true;
+            DGV_Users.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DGV_Users.Size = new Size(817, 423);
             DGV_Users.TabIndex = 0;
             DGV_Users.MouseDown += DGV_Users_MouseDown;

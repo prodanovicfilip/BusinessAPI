@@ -22,7 +22,7 @@ namespace ManagementApplication
             InitializeComponent();
             _apiService = apiService;
         }
-        private void BT_Submit_Click(object sender, EventArgs e)
+        private async void BT_Submit_Click(object sender, EventArgs e)
         {
             var firstName = TB_FirstName.Text;
             var lastName = TB_LastName.Text;
@@ -46,7 +46,7 @@ namespace ManagementApplication
             user.Username = username;
             user.Password = password;
 
-            _apiService.Create(user,nameof(User));
+            await _apiService.Create(user,nameof(User));
             MessageBox.Show("Registration Successful");
             this.Close();
         }

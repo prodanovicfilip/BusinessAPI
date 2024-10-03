@@ -31,11 +31,11 @@ namespace ManagementApplication
             if (_users.Count > 0)
             {
                 DGV_Users.Rows[0].Selected = true;
-                _user = _users.ToList()[0];
+                _user = _users[0];
             }
         }
 
-        private void BT_Delete_Click(object sender, EventArgs e)
+        private async void BT_Delete_Click(object sender, EventArgs e)
         {
             if (_user != null)
             {
@@ -45,7 +45,7 @@ namespace ManagementApplication
                     return;
                 }
                 _users.Remove(_user);
-                _apiService.Delete<User>(_user.Id, nameof(User));
+                await _apiService.Delete<User>(_user.Id, nameof(User));
             }
             DGV_Users.DataSource = null;
             DGV_Users.DataSource = _users;
@@ -62,7 +62,7 @@ namespace ManagementApplication
             var hit = DGV_Users.HitTest(e.X, e.Y);
             DGV_Users.ClearSelection();
             DGV_Users.Rows[hit.RowIndex].Selected = true;
-            _user = _users.ToList()[hit.RowIndex];
+            _user = _users[hit.RowIndex];
         }
 
         private async void BT_Refresh_Click(object sender, EventArgs e)

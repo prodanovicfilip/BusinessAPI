@@ -23,7 +23,7 @@ namespace ManagementApplication
             _apiService = apiService;
         }
 
-        private void BT_Create_Click(object sender, EventArgs e)
+        private async void BT_Create_Click(object sender, EventArgs e)
         {
             var firstName = TB_FirstName.Text;
             var lastName = TB_LastName.Text;
@@ -40,7 +40,7 @@ namespace ManagementApplication
             client.Email = email;
             client.Address = address;
 
-            _apiService.Create(client, nameof(Client));
+            await _apiService.Create(client, nameof(Client));
             MessageBox.Show("Client added");
             this.Close();
         }
