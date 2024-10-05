@@ -41,6 +41,8 @@ namespace ManagementApplication
             services.AddTransient<UserProfile>();
             services.AddTransient<CreateClient>();
             services.AddTransient<UserManagement>();
+            services.AddTransient<EmployeeForm>();
+            services.AddTransient<POSForm>();
             services.AddSingleton<HttpClient>();
             services.AddSingleton<IApiService, ApiService>();
         }

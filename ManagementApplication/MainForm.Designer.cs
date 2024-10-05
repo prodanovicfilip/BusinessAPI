@@ -36,6 +36,8 @@
             BT_Manage = new Button();
             groupBox2 = new GroupBox();
             BT_Refresh = new Button();
+            BT_Employees = new Button();
+            BT_POS = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox2.SuspendLayout();
@@ -128,11 +130,33 @@
             BT_Refresh.UseVisualStyleBackColor = true;
             BT_Refresh.Click += BT_Refresh_Click;
             // 
+            // BT_Employees
+            // 
+            BT_Employees.Location = new Point(634, 12);
+            BT_Employees.Name = "BT_Employees";
+            BT_Employees.Size = new Size(127, 37);
+            BT_Employees.TabIndex = 6;
+            BT_Employees.Text = "See Employees";
+            BT_Employees.UseVisualStyleBackColor = true;
+            BT_Employees.Click += BT_Employees_Click;
+            // 
+            // BT_POS
+            // 
+            BT_POS.Location = new Point(501, 12);
+            BT_POS.Name = "BT_POS";
+            BT_POS.Size = new Size(127, 37);
+            BT_POS.TabIndex = 7;
+            BT_POS.Text = "POS";
+            BT_POS.UseVisualStyleBackColor = true;
+            BT_POS.Click += BT_POS_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1004, 603);
+            Controls.Add(BT_POS);
+            Controls.Add(BT_Employees);
             Controls.Add(groupBox2);
             Controls.Add(BT_Manage);
             Controls.Add(groupBox1);
@@ -156,5 +180,7 @@
         private Button BT_Manage;
         private GroupBox groupBox2;
         private Button BT_Refresh;
+        private Button BT_Employees;
+        private Button BT_POS;
     }
 }

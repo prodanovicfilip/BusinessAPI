@@ -10,8 +10,8 @@ namespace BusinessAPI.Controllers
     [ApiController]
     public class ClientController : Controller
     {
-        private readonly ApiContext _context;
-        public ClientController(ApiContext context)
+        private readonly BusinessDbContext _context;
+        public ClientController(BusinessDbContext context)
         {
             _context = context;
         }

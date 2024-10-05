@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ManagementApplication.DTOs;
 using ManagementApplication.Entities;
 using ManagementApplication.Services;
 
@@ -32,7 +33,7 @@ namespace ManagementApplication
         {
             _clients = (await _apiService.GetAll<Client>(nameof(Client))).ToList();
             dataGridView1.DataSource = _clients;
-            if (_clients.Count > 0 )
+            if (_clients.Count > 0)
             {
                 dataGridView1.Rows[0].Selected = true;
                 _client = _clients.ToList()[0];
@@ -79,6 +80,22 @@ namespace ManagementApplication
             {
                 dataGridView1.DataSource = _clients;
             }
+        }
+
+        private async void BT_Employees_Click(object sender, EventArgs e)
+        {
+            var employees = (await _apiService.GetAll<EmployeeDTO>("Employee")).ToList();
+            var form = Program.GetService<EmployeeForm>();
+            form.Setup(employees);
+            form.ShowDialog();
+        }
+
+        private async void BT_POS_Click(object sender, EventArgs e)
+        {
+            var products = (await _apiService.GetAll<ProductDTO>("Product")).ToList();
+            var form = Program.GetService<POSForm>();
+            form.Setup(products);
+            form.ShowDialog();
         }
     }
 }

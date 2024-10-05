@@ -9,8 +9,8 @@ namespace BusinessAPI.Controllers
     [ApiController]
     public class UserController : Controller
     {
-        private readonly ApiContext _context;
-        public UserController(ApiContext context)
+        private readonly BusinessDbContext _context;
+        public UserController(BusinessDbContext context)
         {
             _context = context;
         }
