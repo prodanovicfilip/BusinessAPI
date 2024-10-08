@@ -19,6 +19,7 @@ namespace ManagementApplication
         private List<ProductDTO> _productCart = new List<ProductDTO>();
         private List<ProductDTO> _productsCache = new List<ProductDTO>();
         private ListViewItem _selectedCartItem;
+        //test
         public POSForm()
         {
             InitializeComponent();
