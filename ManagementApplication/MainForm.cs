@@ -61,8 +61,11 @@ namespace ManagementApplication
         {
             var hit = dataGridView1.HitTest(e.X, e.Y);
             dataGridView1.ClearSelection();
-            dataGridView1.Rows[hit.RowIndex].Selected = true;
-            _client = _clients.ToList()[hit.RowIndex];
+            if (hit.RowIndex != -1)
+            {
+                dataGridView1.Rows[hit.RowIndex].Selected = true;
+                _client = _clients.ToList()[hit.RowIndex];
+            }
         }
 
         private async void BT_Add_Click(object sender, EventArgs e)

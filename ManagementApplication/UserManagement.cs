@@ -61,8 +61,11 @@ namespace ManagementApplication
         {
             var hit = DGV_Users.HitTest(e.X, e.Y);
             DGV_Users.ClearSelection();
-            DGV_Users.Rows[hit.RowIndex].Selected = true;
-            _user = _users[hit.RowIndex];
+            if (hit.RowIndex != -1)
+            {
+                DGV_Users.Rows[hit.RowIndex].Selected = true;
+                _user = _users[hit.RowIndex];
+            }
         }
 
         private async void BT_Refresh_Click(object sender, EventArgs e)
